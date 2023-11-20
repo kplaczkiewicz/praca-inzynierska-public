@@ -1,0 +1,25 @@
+// Animations
+@mixin pulse-animation($name, $scale) {
+    @keyframes #{$name} {
+        0%,
+        100% {
+            scale: 1;
+        }
+        50% {
+            scale: $scale;
+        }
+    }
+}
+
+@mixin move-animation($name, $translate, $opacity) {
+    @keyframes #{$name} {
+        from {
+            translate: $translate;
+            opacity: $opacity;
+        }
+        to {
+            translate: 0 0;
+            opacity: 1;
+        }
+    }
+}

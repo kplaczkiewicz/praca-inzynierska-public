@@ -1,0 +1,37 @@
+// Custom radio button
+
+.toggle-radio {
+    @apply w-[150px];
+
+    &.radio-large {
+        @apply w-full;
+
+        label {
+            @apply py-2.5 text-lg;
+        }
+    }
+
+    &.active {
+        label {
+            background-color: hsl(var(--variant) / 0.3);
+        }
+    }
+
+    &:hover {
+        label {
+            background-color: hsl(var(--variant) / 0.2);
+        }
+    }
+
+    label {
+        @apply label flex cursor-pointer justify-start gap-3 rounded border-2 border-neutral/50 bg-white/50 pl-2 transition-colors;
+
+        input {
+            @apply radio border-2;
+
+            &:checked {
+                background-color: hsl(var(--variant) / 1);
+            }
+        }
+    }
+}

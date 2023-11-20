@@ -1,0 +1,58 @@
+// Single choice question styles shared across components
+
+.single-choice-wrapper {
+    @apply mt-6 flex flex-col gap-4;
+
+    .single-choice-answer {
+        @apply flex cursor-pointer items-center rounded-md bg-white px-4 py-3 shadow border border-neutral/20 transition-all;
+
+        &.answer-locked {
+            @apply cursor-default;
+        }
+
+        &:not(.answer-locked):hover,
+        &.active {
+            @apply text-primary-content ;
+            background-color: hsl(var(--variant) / 1);
+            box-shadow: 0 1px 3px 0 hsl(var(--variant) / 1), 0 1px 2px -1px hsl(var(--variant) / 1);
+
+            .single-choice-answer-option {
+                @apply border-primary-content text-primary-content;
+            }
+        }
+
+        &:not(.answer-locked):active {
+            @apply scale-[0.985];
+        }
+
+        &.answer-wrong {
+            @apply bg-error;
+
+            .single-choice-answer-option {
+                @apply border-error-content text-error-content;
+            }
+        }
+
+        &.answer-correct {
+            @apply bg-success;
+
+            .single-choice-answer-option {
+                @apply border-success-content text-success-content;
+            }
+        }
+
+        &.answer-correct-outline {
+            @apply border-4 border-success px-3;
+        }
+
+        .single-choice-answer-option {
+            @apply mr-4 inline-flex h-7 w-7 items-center justify-center rounded border-2 transition-colors;
+            border-color: hsl(var(--variant) / 1);
+            color: hsl(var(--variant) / 1);
+
+            &.grayed-out {
+                @apply border-base-content text-base-content;
+            }
+        }
+    }
+}

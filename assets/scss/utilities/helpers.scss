@@ -1,0 +1,46 @@
+@import '../utilities/gradient-border.scss';
+
+// Additional utility classes
+.text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text;
+    -webkit-text-fill-color: transparent;
+
+    &.secondary {
+        @apply to-secondary;
+    }
+}
+
+.background-overlay {
+	@apply absolute inset-0 w-full h-full z-[-1];
+}
+
+.overlay {
+	@apply fixed inset-0 w-full h-full z-[1100] grid place-items-center;
+}
+
+// Text marking with opacity
+.text-marking {
+    @apply relative z-[1];
+
+    &::before {
+        @apply absolute -left-1 top-4 z-[-1] h-6 opacity-40;
+        content: '';
+    }
+}
+
+// Make math symbols bigger
+.math-content {
+    .math-inline {
+		@apply inline-block mx-0.5;
+		font-size: 1.1em;
+
+		.ML__base > .mfrac {
+			font-size: 1.3em;
+		}
+	}
+
+    .math-block {
+        @apply flex justify-center my-2;
+		font-size: 1.1em;
+    }
+}

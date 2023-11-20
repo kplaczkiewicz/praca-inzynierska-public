@@ -1,0 +1,20 @@
+// Customizations for virtual keyboard and math-field
+body {
+    --keyboard-accent-color: hsl(var(--p) / 1);
+}
+
+math-field {
+    --caret-color: hsl(var(--n) / 1);
+
+    &:focus-within {
+        @apply outline-2 outline-offset-2 outline-primary;
+    }
+}
+
+math-field::part(virtual-keyboard-toggle) {
+    @apply text-primary;
+
+    &::after {
+        @apply rounded bg-neutral px-3 font-primary text-neutral-content shadow;
+    }
+}

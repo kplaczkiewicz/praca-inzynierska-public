@@ -1,0 +1,67 @@
+// Additional classes and modifications for daisyui buttons
+.btn {
+    svg {
+        @apply duration-150 ease-in-out;
+        transition-property: translate, rotate;
+        translate: 0 0;
+		rotate: 0deg;
+    }
+}
+
+.btn-error {
+    &:hover, &:focus {
+        @apply bg-error-focus border-error-focus;
+    }
+}
+
+.btn-success {
+    &:hover, &:focus {
+        @apply bg-success-focus border-success-focus;
+    }
+}
+
+
+.btn-warning {
+    &:hover, &:focus {
+        @apply bg-warning-focus border-warning-focus;
+    }
+}
+
+
+.btn.router-link-active {
+    &.btn-primary {
+        @apply border-primary bg-primary text-primary-content;
+    }
+
+    &.btn-secondary {
+        @apply border-secondary bg-secondary text-secondary-content;
+    }
+
+    &.btn-accent {
+        @apply border-accent bg-accent text-accent-content;
+    }
+}
+
+.btn-outline {
+    @apply border-2;
+}
+
+.btn-circle-sm {
+	@apply cursor-pointer bg-neutral text-white aspect-square w-5 h-5 grid place-items-center text-sm rounded-full ml-2 transition-colors hover:bg-neutral/80;
+}
+
+.btn-icon-move-right:hover svg {
+    translate: 2px 0;
+}
+
+.btn-icon-move-left:hover svg {
+    translate: -2px 0;
+}
+
+.btn-icon-rotate-right:hover svg {
+	rotate: 45deg;
+}
+
+.btn-icon-rotate-left:hover svg {
+	rotate: -45deg;
+}

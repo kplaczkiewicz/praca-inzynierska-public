@@ -1,0 +1,61 @@
+// Uppy form styles
+@import '../utilities/helpers.scss';
+
+.uppy-Root {
+    @apply text-base-content;
+
+    .uppy-Dashboard-inner {
+        @apply gradient-border-top rounded border-none bg-base-100 pt-1.5 shadow;
+
+        .uppy-DashboardContent-bar {
+            button {
+                @apply btn btn-ghost btn-sm;
+            }
+        }
+
+        .uppy-Dashboard-AddFiles {
+            @apply m-4;
+            height: calc(100% - 1rem);
+
+            .uppy-Dashboard-browse {
+                @apply text-accent hover:text-accent-focus;
+            }
+        }
+
+        .uppy-Dashboard-Item-preview {
+            @apply bg-base-200;
+        }
+
+        .uppy-Dashboard-Item-action--remove {
+            @apply text-error;
+        }
+
+        .uppy-StatusBar-actionBtn--upload {
+            @apply btn btn-primary;
+
+            @screen sm {
+                padding-inline: 3rem !important;
+            }
+        }
+
+        .uppy-StatusBar-actionBtn--retry {
+            @apply btn btn-error btn-sm text-white text-xs;
+
+            svg {
+                @apply static mt-px scale-150;
+            }
+        }
+
+        .uppy-StatusBar-actionBtn--done {
+            @apply btn btn-primary btn-sm text-xs;
+        }
+
+        .uppy-u-reset:not(.uppy-Dashboard-browse) {
+            @apply leading-[0];
+        }
+
+        .uppy-DashboardTab-btn {
+            @apply w-[110px];
+        }
+    }
+}

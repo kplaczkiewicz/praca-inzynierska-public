@@ -1,0 +1,104 @@
+// Customizations for vselect package
+@import 'vue-select/dist/vue-select.css';
+
+.v-select,
+.vs__dropdown-menu {
+    --vs-border-color: hsl(var(--p) / 1);
+    --vs-border-width: 2px;
+    --vs-dropdown-option--active-bg: hsl(var(--p) / 1);
+    --vs-selected-color: hsl(var(--n) / 1);
+    --vs-controls-color: hsl(var(--n) / 1);
+    --vs-search-input-placeholder-color: hsl(var(--n) / 0.8);
+
+    &.v-select-secondary .vs__dropdown-menu {
+        --vs-dropdown-option--active-bg: hsl(var(--s) / 1);
+    }
+
+    &.v-select-accent .vs__dropdown-menu {
+        --vs-dropdown-option--active-bg: hsl(var(--a) / 1);
+    }
+}
+
+.vs--multiple {
+    .vs__selected {
+        @apply px-3  rounded-xl border-neutral bg-white;
+
+        button {
+            @apply ml-2;
+            --vs-controls-color: hsl(var(--er) / 1);
+        }
+    }
+}
+
+.v-select-neutral {
+    --vs-border-color: hsl(var(--n) / 1);
+
+    .vs__dropdown-menu {
+        --vs-border-color: hsl(var(--n) / 1);
+    }
+}
+
+.v-select-sm {
+    font-size: 14px;
+}
+
+.v-select-icon {
+    .vs__dropdown-toggle {
+        padding: 0 6px 4px 28px !important;
+    }
+}
+
+.v-select {
+    @apply bg-white;
+    --vs-actions-padding: 5px 6px 0 3px;
+
+    &.drop-up {
+        .vs__dropdown-toggle {
+            border-bottom-left-radius: var(--vs-border-radius);
+            border-bottom-right-radius: var(--vs-border-radius);
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-color: var(--vs-border-color);
+            border-top-color: transparent;
+        }
+    }
+
+    .vs__dropdown-toggle {
+        padding: 0 6px 4px;
+        min-height: 2rem;
+    }
+
+    &.hide-clear {
+        .vs__clear {
+            display: none;
+        }
+    }
+
+	.vs__clear {
+		@apply fill-error;
+	}
+
+    &.hide-search {
+        .vs__search {
+            display: none;
+        }
+    }
+}
+
+.vs__dropdown-menu {
+    --vs-dropdown-z-index: 1200;
+
+    &[data-popper-placement='top'] {
+        border-bottom-color: transparent;
+        border-top-left-radius: var(--vs-border-radius);
+        border-top-right-radius: var(--vs-border-radius);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-style: var(--vs-border-style);
+        box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .vs__dropdown-option {
+        @apply whitespace-normal;
+    }
+}

@@ -1,0 +1,43 @@
+// Single file for all gradient border variations
+
+.gradient-border-base {
+    @apply absolute inline-block from-primary to-accent content-[''];
+}
+
+.gradient-border-x {
+    @apply left-0 h-1.5 w-full bg-gradient-to-r;
+}
+
+.gradient-border-y {
+    @apply top-0 h-full w-1.5 bg-gradient-to-b;
+}
+
+.gradient-border-top {
+    &::before {
+        @apply gradient-border-base gradient-border-x top-0 rounded-t;
+    }
+}
+
+.gradient-border-bottom {
+    &::before {
+        @apply gradient-border-base gradient-border-x bottom-0 rounded-b;
+    }
+}
+
+.gradient-border-right {
+    &::before {
+        @apply gradient-border-base gradient-border-y right-0 rounded-r;
+    }
+}
+
+.gradient-border-left {
+    &::before {
+        @apply gradient-border-base gradient-border-y left-0 rounded-l;
+    }
+}
+
+.gradient-secondary {
+    &::before {
+        @apply to-secondary;
+    }
+}

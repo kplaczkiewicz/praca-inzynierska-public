@@ -1,0 +1,10 @@
+// Customizations for accessible color picker package
+.vacp-copy-button,
+.vacp-color-inputs,
+.vacp-range-input-label-text {
+    display: none !important;
+}
+
+.vacp-color-space {
+    @apply border border-neutral;
+}

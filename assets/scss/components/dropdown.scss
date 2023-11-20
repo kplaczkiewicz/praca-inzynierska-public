@@ -1,0 +1,44 @@
+// Custom dropdown styles
+.menu-dropdown {
+    .dropdown-content {
+        @apply menu ml-0 mt-2 rounded-lg border border-neutral/10 bg-base-100 p-2 shadow-2xl;
+
+        a {
+            @apply rounded-lg text-base transition-colors;
+
+            &:hover,
+            &.router-link-active {
+                @apply bg-primary text-primary-content;
+            }
+        }
+    }
+
+    &:focus-within {
+        .dropdown-content {
+            @apply flex opacity-100;
+        }
+    }
+}
+
+.filter-dropdown {
+    &:focus-within {
+        .dropdown-label {
+            @apply border-neutral bg-neutral text-white;
+        }
+    }
+
+    .dropdown-content {
+        @apply z-20 mt-1 w-full rounded-md border-2 border-neutral bg-white shadow-lg;
+
+        label {
+            input[type='checkbox'] {
+                @apply border-neutral;
+
+            }
+
+            &:hover {
+                @apply bg-base-300;
+            }
+        }
+    }
+}

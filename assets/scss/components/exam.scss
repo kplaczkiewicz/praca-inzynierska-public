@@ -1,0 +1,44 @@
+// Exam general styles
+@import '../utilities/helpers.scss';
+
+.exam-container {
+    @apply grid gap-10 py-14;
+    grid-template-columns: 230px 1fr 230px;
+
+    &.exam-finished {
+        @apply block max-w-7xl;
+    }
+}
+
+.question-title {
+    @apply text-marking block font-bold pl-0.5;
+
+    &::before {
+        background-color: hsl(var(--variant) / 1);
+    }
+}
+
+.exam-question {
+    @apply relative mb-10;
+
+}
+
+.question-divider {
+    @apply divider mx-auto mt-10 before:bg-neutral/60 after:bg-neutral/60;
+}
+
+.scoring-section {
+    @apply relative flex-1 pl-8 py-1;
+
+    &::before {
+        @apply rounded-none;
+    }
+
+    .scoring-section-header {
+        @apply -ml-2 mb-4 text-lg font-medium;
+
+        svg {
+            @apply -mb-px mr-1 text-2xl text-primary;
+        }
+    }
+}
